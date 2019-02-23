@@ -5,7 +5,7 @@ const router = require("express").Router();
 router.get("/", (req, res) => {
   res.render("timestamp", {
     project: "Time Stamp Microservice",
-    endpoint: `GET https://pacific-tundra-51108.herokuapp.com/api/timestamp/:date_string`
+    endpoint: `GET http://${global.gConfig.hostName}/api/timestamp/:date_string`
   });
 });
 module.exports = router;
