@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "push:heroku":"git push heroku master",
     "start":"npm run build-css & NODE_ENV=production node index.js",
     "start:dev": "npm run dev & npm run build-css",
     "dev": "nodemon index.js",
