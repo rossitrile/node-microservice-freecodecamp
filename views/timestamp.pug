@@ -1,0 +1,14 @@
+extends layout
+
+block title 
+    title Timestamp Microservice
+    
+block usage
+    ol(class="list u_ml-m")
+        li The API endpoint is: #[span(class="code") #{endpoint}]
+        li The #[strong date_string] has to be in the #[strong ISO-8601] format (YYYY-MM-DD) or a unix timestamp.
+        li If #[strong date_string] has a right format, the API will return #[span(class="code") {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}]
+        li If #[strong date_string] is empty, it will return the current time.
+        li If #[strong date_string] is not in the #[strong ISO-8601] format, the API will return 
+            span(class="code") { "error" : "Invalid Date" }.
+
