@@ -1,0 +1,19 @@
+{
+    "development": {
+        "config_id": "development",
+        "node_port": 4000,
+        "db": "mongodb://localhost/fcc-micro",
+        "secretKey": "adfghadfklghasdfasdfdfgdfgdfg",
+        "localurl": "localhost:4000"
+    },
+    "testing": {
+        "config_id": "testing",
+        "db": "mongodb://localhost/fcc-micro_test"
+    },
+    "production": {
+        "config_id": "production",
+        "node_port": 9000,
+        "db": "mongodb://rossi:Lnt@04780@!@ds041546.mlab.com:41546/node-course",
+        "localurl": "localhost:9000"
+    }
+}
