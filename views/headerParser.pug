@@ -1,0 +1,9 @@
+extends layout
+
+block title 
+    title Header Parser Microservice 
+
+block usage 
+    ol(class="list u_ml-m")
+        li The API endpoint is: #[span(class="code") #{endpoint}]
+        li The API will tell the IP address, language, browser of the client.
