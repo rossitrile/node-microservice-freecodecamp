@@ -1,0 +1,17 @@
+.link {
+  font-size: 2rem;
+  font-weight: 400;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  cursor: pointer;
+  text-align:center;
+  transition: transform 0.3s;
+  display: block;
+  &:hover {
+    transform: translate(0, -5%)
+  }
+  &:active {
+    transform: translate(0, 5%)
+
+  }
+}

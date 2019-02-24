@@ -1,0 +1,227 @@
+.material-input {
+  position: relative;
+  margin-bottom: 3rem;
+  // ----- label -------
+  &__input {
+    border: none;
+    display: block;
+    border-bottom: 1px solid #757575;
+    padding: 8px 0 8px 5px;
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &--text-area {
+      padding: 0 0 60px 5px;
+    }
+  }
+  &__input:focus {
+    outline: none;
+  }
+
+  // -- radio button --
+  &__input-radio {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    // when radio button is checked
+    input:checked ~ span:after,
+    input:checked ~ span:before {
+      display: block;
+    }
+  }
+  &__custom-radio {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 3px solid #5264ae;
+  }
+  &__custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 3px;
+    height: 20px;
+    width: 20px;
+    border: 3px solid #757575;
+  }
+  &__custom-checkbox:before {
+    content: "";
+    position: absolute;
+    display: none;
+    top: -5px;
+    left: 4px;
+    width: 8px;
+    height: 16px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    z-index: 999;
+  }
+  &__custom-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: -3px;
+    left: -3px;
+    height: 20px;
+    width: 20px;
+    background: #5264ae;
+  }
+  &__custom-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 49.5%;
+    left: 47.9%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #5264ae;
+  }
+
+  // ----- label -------
+  &__label {
+    position: absolute;
+    color: #999;
+    font-size: 16px;
+    top: 10px;
+    left: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  &__label-radio {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  // ---- dropdown ----
+  &__dropdown {
+    transition: 0.2s ease-out all;
+    position: relative;
+    -moz-transition: 0.2s ease-out all;
+    -webkit-transition: 0.2s ease-out all;
+  }
+  // ---- active state -----
+  &__input:focus ~ label,
+  &__input:valid ~ label {
+    top: -18px;
+    font-size: 12px;
+    color: #5264ae;
+  }
+
+  // ---- invalid state ----
+  &__input:focus:invalid {
+    & ~ label {
+      top: -18px;
+      font-size: 12px;
+      color: #d50000;
+    }
+
+    & ~ .bar:before,
+    & ~ .bar:after {
+      background: #d50000;
+      height: 2px;
+    }
+  }
+
+  // ----- bottom bar -----
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .bar:before,
+  .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264ae;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+
+  /* active state */
+  &__input:focus ~ .bar:before,
+  &__input:focus ~ .bar:after {
+    width: 50%;
+  }
+  &__input:hover ~ .bar {
+    background: #5264ae;
+    height: 2px;
+  }
+}
+
+// =======================================
+// =======================================
+// =======================================
+
+.material-file-input {
+  position: relative;
+  &__label {
+    width: 50%;
+    display: block;
+    cursor: pointer;
+
+  }
+  &__input {
+    display: none;
+  }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $btn-color;
+    width: 50px;
+    height: 50px;
+    i {
+      color: white;
+
+    }
+  }
+  &__file-name {
+    position: relative;
+    display: block;
+    top: -25px;
+    width: 100%;
+    left: 60px;
+  }
+  &__bottom-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    left: 60px;
+    height: 2px;
+    top: -10px;
+    background-color: #757575;
+  }
+}

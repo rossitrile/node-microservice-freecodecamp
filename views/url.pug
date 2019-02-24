@@ -1,0 +1,25 @@
+extends layout 
+
+block title
+    title URLShorterner Microservice 
+
+block logic
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=")
+    script 
+        include script.js
+block usage
+    ol(class="list u_ml-m")
+        li The API endpoint is: #[span(class="code") #{endpoint}]
+        li The format of the data in the POST request is #[span(class="code") {url: 'The url you want to shorten'}]
+        li The right format of the url is #[span(class="code") http(s)://www.example.com(/more/routes)]
+        li If the url is in the right format you will receive the short version of your url
+        li Otherwise, you will receive an error object #[span(class="code") {"error":"invalid URL"}]
+    h2(class="u_text-center u_mb-s") Example:
+    form(id="form")
+        div(class="material-input")
+            input(class="material-input__input" id="url" required)
+            span(class="bar")
+            label(class="material-input__label" for="url") Your Link
+        button(class="material-button u_mb-m" type="submit") Shorten my link
+
+

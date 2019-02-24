@@ -1,0 +1,27 @@
+extends layout 
+
+block title
+    link(href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
+    title Metadata Microservice
+block logic
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=")
+    script 
+        include script2.js    
+
+block usage
+    ol(class="list u_ml-m")
+        li The API endpoint is: #[span(class="code") #{endpoint}]
+        li The input field has to have the #[strong name] attribute equals to #[strong upfile]
+        li The API will return the name and size of the file in bytes. 
+    h2(class="u_text-center u_mb-s") Example:
+    form(id="form")
+        div(class="material-file-input")
+            label(class="material-file-input__label u_mb-s" for="upfile") 
+                input(class="material-file-input__input" type='file' name='upfile' id="upfile")
+                span(class="material-file-input__icon") <i class="fas fa-upload"></i>
+                span(class="material-file-input__file-name" id='file_name')
+                span(class="material-file-input__bottom-bar" )
+        button(class="material-button u_mb-m" type='submit') Upload
+
+
+        

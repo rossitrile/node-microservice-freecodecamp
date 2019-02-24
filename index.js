@@ -3,8 +3,9 @@ const path = require("path");
 const express = require("express");
 const app = express();
 // require('./utils/crossOriginHelper')(app);
-// require('./utils/mongoConnection');
-// require('./utils/middlewareConfig')(app);
+
+require('./utils/mongoConnection');
+require('./utils/middlewareConfig')(app);
 
 // Setting views engine
 app.set("views", path.join(__dirname, "views"));
