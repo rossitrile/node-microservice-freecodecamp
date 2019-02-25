@@ -293,6 +293,39 @@ textarea {
   .link:active {
     transform: translate(0, 5%); }
 
+.fork-me-icon svg {
+  animation: initial-move 200ms ease-in-out;
+  top: 0;
+  right: 0;
+  position: absolute; }
+
+.fork-me-icon:hover .fork-me-icon__arm {
+  cursor: pointer;
+  animation: octocat-wave 560ms ease-in-out; }
+
+@keyframes initial-move {
+  0% {
+    transform: translateX(50px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0); }
+  20%,
+  60% {
+    transform: rotate(-25deg); }
+  40%,
+  80% {
+    transform: rotate(10deg); } }
+
+@media (max-width: 500px) {
+  .fork-me-icon:hover .fork-me-icon__arm {
+    animation: none; }
+  .fork-me-icon .fork-me-icon__arm {
+    animation: octocat-wave 560ms ease-in-out; } }
+
 .exercise {
   display: flex;
   padding: 0 2rem; }
