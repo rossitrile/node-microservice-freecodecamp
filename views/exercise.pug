@@ -1,0 +1,80 @@
+doctype
+html
+    head
+        style 
+            include style.css
+        title Exercise Tracker 
+    body
+        h1(class="u_text-center u_mb-m u_mt-m") API Project: #{project}
+        div(class="exercise")
+            div(class="exercise__left")
+                div(class="paper") 
+                    h3(class="u_mb-s") Create a New User
+                    span(class="code u_mb-s") POST #{endpoint}/exercise/new-user
+                    form(id="form_user")
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="Username" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="Username") username
+                        button(class="material-button u_max-width" type="submit") Create
+                div(class="paper")
+                    h3(class="u_mb-s") Add Exercise
+                    span(class="code u_mb-s") POST #{endpoint}/exercise/add
+                    form(id="form_exercise")
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="userId" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="userId") userId*
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" type="number" minimum="9" id="Username" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="description") duration*
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="description" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="description") description*
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="date" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="date") date (YYYY-MM-DD)
+                        button(class="material-button u_max-width" type="submit") Add
+                div(class="paper")
+                    h3(class="u_mb-s") Add Exercise
+                    span(class="code u_mb-s") POST #{endpoint}/exercise/log?{userId}&[from]&[to]&[limit]
+                    form(id="form_log")
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="userID" required)
+                            span(class="bar")
+                            label(class="material-input__label" for="userID") userId*
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="from")
+                            span(class="bar")
+                            label(class="material-input__label" for="from") from
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="to")
+                            span(class="bar")
+                            label(class="material-input__label" for="to") to
+                        div(class="material-input u_mt-m u_mb-s")
+                            input(class="material-input__input" id="limit")
+                            span(class="bar")
+                            label(class="material-input__label" for="limit") limit
+                        button(class="material-button u_max-width" type="submit") See the log
+            div(class="exercise__right")
+                div(class="paper") 
+                    h3(class="u_mb-s u_text-center") User ID
+                    span(class="exercise__information u_text-center")
+                    h3(class="u_mb-s u_mt-s u_text-center") The exercise just added
+                    span(class="exercise__information u_pl-s")
+                        span(class="u_mb-s") 
+                        span(class="u_mb-s") 
+                        span 
+                    h3(class="u_mb-s u_mt-s u_text-center") The log of exercise
+                    span(class="exercise__information exercise__information--scroll u_pl-s ")
+                        ol(class="list u_ml-m")
+                            li
+                                span(class="u_mb-s") Duration: #[strong 120 minutes]
+                                span(class="u_mb-s") Description: #[strong doing HIIT]
+                                span Date: #[strong 26-2-2019]
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=")
+        script 
+            include script3.js

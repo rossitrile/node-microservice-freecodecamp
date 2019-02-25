@@ -7,4 +7,6 @@ module.exports = app => {
   app.use("/url-shortener", require("../services/URLShortener").view);
   app.use("/api/metadata", require("../services/Metadata").route);
   app.use("/metadata", require("../services/Metadata").view);
+  app.use("/api/exercise", require("../services/ExerciseTracker").route);
+  app.use("/exercise-tracker", require("../services/ExerciseTracker").view);
 };

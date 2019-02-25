@@ -2,6 +2,10 @@
   text-align: center !important;
 }
 
+.u_max-width {
+  width: 100% !important;
+}
+
 // Margin bottom
 .u_mb-s {
   margin-bottom: 1rem !important;
@@ -13,6 +17,18 @@
   margin-bottom: 4rem !important;
 }
 
+
+// Margin top
+.u_mt-s {
+  margin-top: 1rem !important;
+}
+.u_mt-m {
+  margin-top: 2rem !important;
+}
+.u_mt-lg {
+  margin-top: 4rem !important;
+}
+
 // Margin left
 .u_ml-s {
   margin-left: 1rem !important;
@@ -22,4 +38,15 @@
 }
 .u_ml-lg {
   margin-left: 4rem !important;
+}
+
+// Padding left
+.u_pl-s {
+  padding-left: 1rem !important;
+}
+.u_pl-m {
+  padding-left: 2rem !important;
+}
+.u_pl-lg {
+  padding-left: 4rem !important;
 }

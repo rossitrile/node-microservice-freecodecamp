@@ -1,0 +1,24 @@
+.exercise {
+    display: flex;
+    padding: 0 2rem;
+    &__left {
+        width: 35%;
+    }
+    &__right {
+        width: 55%;
+        margin-left: 6rem;
+    }
+    span {
+        display: block;
+    }
+    &__information {
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0.15);
+        padding: 1rem 0;
+
+        &--scroll {
+            height: 64.76rem;
+            overflow: auto;
+        }
+    }
+}

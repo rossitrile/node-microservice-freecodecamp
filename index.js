@@ -2,7 +2,10 @@ require("./config/config");
 const path = require("path");
 const express = require("express");
 const app = express();
-// require('./utils/crossOriginHelper')(app);
+
+// allow Joi to validate joi-objectid
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 
 require('./utils/mongoConnection');
 require('./utils/middlewareConfig')(app);
